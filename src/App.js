@@ -1,14 +1,17 @@
 import "./App.css";
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import HeaderBar from "./layout/HeaderBar";
 import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <div className="container">
-      <h1>Blog Frontend</h1>
+    <div className="container-fluid">
+      <HeaderBar />
 
       <Switch>
         <Route
@@ -17,6 +20,16 @@ function App() {
           render={(routerProps) => (
             <Landing {...routerProps} setUser={setUser} />
           )}
+        />
+
+        <Route
+          path="/home"
+          render={(routerProps) => <Home {...routerProps} user={user} />}
+        />
+
+        <Route
+          path="/about"
+          render={(routerProps) => <About {...routerProps} user={user} />}
         />
       </Switch>
     </div>

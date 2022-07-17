@@ -1,4 +1,5 @@
 import LoginForm from "../forms/LoginForm";
+import notes from "../img/music-notes.png";
 import RegisterForm from "../forms/RegisterForm";
 import { useState } from "react";
 
@@ -8,21 +9,33 @@ const Landing = (props) => {
   const { setUser } = props;
 
   const handleClick = () => {
-    setHasAccount(false);
+    if (hasAccount) {
+      setHasAccount(false);
+    } else {
+      setHasAccount(true);
+    }
   };
 
   return (
-    <div>
-      <h1>Landing Page</h1>
+    <div className="landing-page">
+      {/* <h1 className="page-header">Landing Page</h1> */}
+      <div className="landing-image">
+        <img
+          className="music-notes"
+          src={notes}
+          alt="multicolored music notes"
+        />
+      </div>
+
       {/* renders login first */}
       {hasAccount === true ? (
-        <div>
+        <div className="landing-form">
           <LoginForm setUser={setUser} />
-          <p>
+          <p className="reg-login">
             Don't have an account? <br />{" "}
             <span
               type="button"
-              className="btn btn-primary"
+              className="btn btn-secondary"
               onClick={handleClick}
             >
               Sign Up
@@ -30,8 +43,19 @@ const Landing = (props) => {
           </p>
         </div>
       ) : (
-        <div>
+        <div className="landing-form">
           <RegisterForm setUser={setUser} />
+          <p className="reg-login">
+            {" "}
+            Have an account? <br />{" "}
+            <span
+              type="button"
+              className="btn btn-secondary"
+              onClick={handleClick}
+            >
+              Login
+            </span>
+          </p>
         </div>
       )}
     </div>

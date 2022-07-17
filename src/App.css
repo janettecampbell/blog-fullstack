@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+html {
+  background-color: rgb(209, 230, 247);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  background-color: rgb(147, 204, 251);
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.nav-bar {
+  float: right;
+  margin-right: 3vw;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  box-shadow: 0 3px 14px -2px #888;
+}
+
+nav {
+  padding: 0 0 1vw 15vw;
+  float: left;
+  font-weight: 500;
+}
+
+.nav-user {
+  padding: 0 0 1vw 15vw;
+  float: right;
+}
+
+.site-name {
+  padding: 1vw 0 1vw 15vw;
+}
+
+.page-header {
+  padding: 0 0 2vw 15vw;
+}
+
+.landing-page {
+  margin: 0 auto;
+}
+
+.landing-image {
+  float: left;
+  margin: 2vw 0 0 15vw;
+}
+
+.reg-login {
+  margin-top: 10px;
+}
+
+.reg-login span {
+  margin-top: 10px;
+}
+
+.landing-form {
+  width: 40vw;
+  float: right;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 25px;
+  margin: 2vw 2vw 0 0;
+  padding: 4vw;
+  background-color: aliceblue;
+}
+
+.form-check-label {
+  margin-left: 10px;
+}
+
+.blog-form {
+  width: 40vw;
+  float: left;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 25px;
+  margin: 2vw 2vw 0 0;
+  padding: 2vw;
+  background-color: aliceblue;
+}
+
+@media only screen and (min-width: 501px) and (max-width: 991px) {
+  .landing-page {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .landing-image {
+    position: relative;
+    left: 25%;
+    margin: 0;
+  }
+
+  .landing-form {
+    margin-top: 2vh;
+    float: left;
+    width: 93vw;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 500px) {
+  .music-notes {
+    width: 81vw;
   }
-  to {
-    transform: rotate(360deg);
+  .landing-form {
+    margin-top: 2vh;
+    float: left;
+    width: 92vw;
   }
 }

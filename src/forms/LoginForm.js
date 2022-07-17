@@ -60,9 +60,8 @@ const LoginForm = (props) => {
             value={formData.password}
             onChange={handleChange}
           />
-
-          <input className="btn btn-primary" type="submit" />
         </div>
+        <input className="btn btn-primary" type="submit" />
       </form>
     </div>
   );

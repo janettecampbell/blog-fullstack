@@ -52,9 +52,11 @@ const RegisterForm = (props) => {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="email">Email</label>
+          <label className="form-label" htmlFor="email">
+            Email
+          </label>
           <input
-            className="form-label"
+            className="form-control"
             type="text"
             id="email"
             name="email"
