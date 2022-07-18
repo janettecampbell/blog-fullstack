@@ -25,6 +25,12 @@ const CreateBlogForm = (props) => {
 
   return (
     <div className="blog-form">
+      <div className="close-btn">
+        <button className="btn btn-danger" onClick={props.viewForm}>
+          X
+        </button>
+      </div>
+
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label" htmlFor="blog-title">

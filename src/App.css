@@ -20,6 +20,7 @@ html {
 .container-xl,
 .container-xxl {
   box-shadow: 0 3px 14px -2px #888;
+  height: 18vh;
 }
 
 nav {
@@ -34,7 +35,7 @@ nav {
 }
 
 .site-name {
-  padding: 1vw 0 1vw 15vw;
+  padding: 1vw 0 1vw 0;
 }
 
 .page-header {
@@ -77,11 +78,18 @@ nav {
   float: left;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 25px;
-  margin: 2vw 2vw 0 0;
+  margin: 10vh 2vw 0 0;
   padding: 2vw;
   background-color: aliceblue;
 }
 
+.close-btn {
+  text-align: right;
+}
+
+.close {
+  vertical-align: baseline;
+}
 @media only screen and (min-width: 501px) and (max-width: 991px) {
   .landing-page {
     margin: 0 auto;
@@ -99,6 +107,10 @@ nav {
     float: left;
     width: 93vw;
   }
+
+  .blog-form {
+    width: 93vw;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -109,5 +121,19 @@ nav {
     margin-top: 2vh;
     float: left;
     width: 92vw;
+  }
+  .blog-form {
+    width: 81vw;
+    margin-top: 12vh;
+  }
+
+  .container,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    height: 21vh;
   }
 }

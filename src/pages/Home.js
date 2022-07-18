@@ -40,26 +40,19 @@ const Home = (props) => {
   };
 
   return (
-    <div>
+    <>
       <NavBar user={props.user} />
-
-      {showForm === true ? (
-        <button className="btn btn-danger" onClick={viewForm}>
-          Close
-        </button>
-      ) : (
-        <button className="btn btn-primary" onClick={viewForm}>
+      {/* show form on click of post blog */}
+      {showForm === true ? null : (
+        <button className="open btn btn-primary" onClick={viewForm}>
           Post Blog
         </button>
       )}
 
       {showForm === true ? (
-        <CreateBlogForm setBlogs={setBlogs} blogs={blogs} />
+        <CreateBlogForm viewForm={viewForm} setBlogs={setBlogs} blogs={blogs} />
       ) : null}
-      {/*  */}
-      {/* <button onClick={setShowForm(true)}>Add Blog Post</button> */}
-      {/* {showForm === true ? viewForm : null} */}
-    </div>
+    </>
   );
 };
 
