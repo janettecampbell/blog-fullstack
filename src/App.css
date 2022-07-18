@@ -42,6 +42,11 @@ nav {
   padding: 0 0 2vw 15vw;
 }
 
+.page-content {
+  margin-top: 3vh;
+  float: left;
+}
+
 .landing-page {
   margin: 0 auto;
 }
