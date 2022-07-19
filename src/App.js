@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import HeaderBar from "./layout/HeaderBar";
-import Landing from "./pages/Landing";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import HeaderBar from "./components/layout/HeaderBar";
+import Landing from "./components/pages/Landing";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,7 +18,7 @@ function App() {
           exact
           path="/"
           render={(routerProps) => (
-            <Landing {...routerProps} setUser={setUser} />
+            <Landing {...routerProps} user={user} setUser={setUser} />
           )}
         />
 

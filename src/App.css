@@ -69,13 +69,17 @@ nav {
   float: right;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 25px;
-  margin: 2vw 2vw 0 0;
+  margin: 7vw 2vw 0 0;
   padding: 4vw;
   background-color: aliceblue;
 }
 
 .form-check-label {
   margin-left: 10px;
+}
+
+.music-notes {
+  margin-top: 8vh;
 }
 
 .blog-form {
@@ -95,6 +99,11 @@ nav {
 .close {
   vertical-align: baseline;
 }
+
+.show-blogs {
+  margin-top: 6vh;
+}
+
 @media only screen and (min-width: 501px) and (max-width: 991px) {
   .landing-page {
     margin: 0 auto;
@@ -115,6 +124,10 @@ nav {
 
   .blog-form {
     width: 93vw;
+  }
+
+  .page-content {
+    margin-top: 7vh;
   }
 }
 
@@ -140,5 +153,9 @@ nav {
   .container-xl,
   .container-xxl {
     height: 21vh;
+  }
+
+  .page-content {
+    margin-top: 12vh;
   }
 }

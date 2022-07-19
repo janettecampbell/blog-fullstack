@@ -1,9 +1,9 @@
 import NavBar from "../layout/NavBar";
 
-const About = () => {
+const About = (props) => {
   return (
     <>
-      <NavBar />
+      <NavBar user={props.user} />
       <div className="page-content">
         <h1>About Us</h1>
         <p>

@@ -5,7 +5,7 @@ const CreateBlogForm = (props) => {
   const [formData, setFormData] = useState({
     blog_title: "",
     blog_content: "",
-    private: true,
+    private: false,
   });
 
   const handleChange = (e) => {
@@ -41,7 +41,7 @@ const CreateBlogForm = (props) => {
             type="text"
             id="blog-title"
             name="blog-title"
-            value={formData.blog_title}
+            defaultValue={formData.blog_title}
             onChange={handleChange}
           />
         </div>
@@ -54,28 +54,24 @@ const CreateBlogForm = (props) => {
             className="form-control"
             id="blog-content"
             name="blog-content"
-            value={formData.blog_content}
+            defaultValue={formData.blog_content}
             onChange={handleChange}
             rows="3"
           ></textarea>
-          {/* <input
-            className="form-control"
-            type="text"
-            id="blog-content"
-            name="blog-content"
-            value={formData.blog_content}
-            onChange={handleChange}
-          /> */}
         </div>
 
         <div className="mb-3">
           <input
             className="form-check-input"
             type="checkbox"
-            value={formData.private}
+            defaultValue={formData.private}
             onChange={handleChange}
           />
-          <label className="form-check-label" htmlFor="private">
+          <label
+            className="form-check-label"
+            htmlFor="private"
+            onChange={handleChange}
+          >
             Private
           </label>
         </div>
