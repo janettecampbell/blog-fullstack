@@ -52,6 +52,7 @@ const CreateBlogForm = (props) => {
           </label>
           <textarea
             className="form-control"
+            type="text"
             id="blog-content"
             name="blog-content"
             defaultValue={formData.blog_content}
@@ -63,15 +64,15 @@ const CreateBlogForm = (props) => {
         <div className="mb-3">
           <input
             className="form-check-input"
+            id="private"
             type="checkbox"
             defaultValue={formData.private}
-            onChange={handleChange}
+            checked={formData.private === true}
+            onChange={(e) =>
+              setFormData({ ...formData, [e.target.id]: e.target.checked })
+            }
           />
-          <label
-            className="form-check-label"
-            htmlFor="private"
-            onChange={handleChange}
-          >
+          <label className="form-check-label" htmlFor="private">
             Private
           </label>
         </div>
