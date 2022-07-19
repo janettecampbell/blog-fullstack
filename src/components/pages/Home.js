@@ -2,6 +2,7 @@ import NavBar from "../layout/NavBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CreateBlogForm from "../forms/CreateBlogForm";
+import UpdateBlogForm from "../forms/UpdateBlogForm";
 import ShowBlogs from "../ShowBlogs";
 import { useHistory } from "react-router-dom";
 
@@ -79,7 +80,7 @@ const Home = (props) => {
         {/* show create form on click of post blog */}
 
         {showUpdateForm === true ? (
-          <CreateBlogForm
+          <UpdateBlogForm
             viewForm={viewUpdateForm}
             setBlogs={setBlogs}
             blogs={blogs}
