@@ -28,7 +28,7 @@ const UpdateBlogForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/blogs/${id}`, blog, {
+      .post(`http://localhost:5000/blogs/${id}`, blog, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
@@ -39,39 +39,60 @@ const UpdateBlogForm = (props) => {
   return (
     <div>
       {blog && (
-        <form onSubmit={handleSubmit}>
-          <label className="form-label" htmlFor="title">
-            Title
-          </label>
-          <input
-            className="form-control"
-            type="text"
-            id="title"
-            name="title"
-            value={blog.blog_title}
-            onChange={handleChange}
-          />
+        <div className="blog-form">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="title">
+                Title
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                id="title"
+                name="title"
+                value={blog.title}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="mb-3">
-            <label className="form-label" htmlFor="details">
-              Details
-            </label>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="content">
+                Post
+              </label>
+              <textarea
+                className="form-control"
+                type="text"
+                id="content"
+                name="content"
+                value={blog.content}
+                onChange={handleChange}
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div className="mb-3">
+              <input
+                className="form-check-input"
+                id="private"
+                type="checkbox"
+                value={blog.private}
+                checked={blog.private === true}
+                onChange={(e) =>
+                  setBlog({ ...blog, [e.target.id]: e.target.checked })
+                }
+              />
+              <label className="form-check-label" htmlFor="private">
+                Private
+              </label>
+            </div>
+
             <input
-              className="form-control"
-              type="text"
-              id="details"
-              name="details"
-              value={blog.blog_content}
-              onChange={handleChange}
+              type="submit"
+              className="btn btn-primary"
+              value="Update Post"
             />
-          </div>
-
-          <input
-            type="submit"
-            className="btn btn-success"
-            value="Update Blog Post"
-          />
-        </form>
+          </form>
+        </div>
       )}
     </div>
   );

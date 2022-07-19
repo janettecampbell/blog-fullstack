@@ -7,8 +7,8 @@ const ShowBlogs = (props) => {
       {blogs &&
         blogs.map((blog) => (
           <div key={blog._id}>
-            <h3>{blog.blog_title}</h3>
-            <p>{blog.blog_content}</p>
+            <h3>{blog.title}</h3>
+            <p>{blog.content}</p>
             {blog.user === props.user._id && (
               <span
                 className="btn btn-danger"

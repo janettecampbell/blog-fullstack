@@ -16,11 +16,8 @@ const LoginForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
 
     axios.post("http://localhost:5000/auth", formData).then((res) => {
-      console.log(res.data);
-
       if (res.data.token && res.data.user) {
         localStorage.setItem("userToken", res.data.token);
         props.setUser(res.data.user);
