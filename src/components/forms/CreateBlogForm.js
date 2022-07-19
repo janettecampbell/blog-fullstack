@@ -3,8 +3,8 @@ import axios from "axios";
 
 const CreateBlogForm = (props) => {
   const [formData, setFormData] = useState({
-    blog_title: "",
-    blog_content: "",
+    title: "",
+    content: "",
     private: false,
   });
 
@@ -33,29 +33,29 @@ const CreateBlogForm = (props) => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label className="form-label" htmlFor="blog-title">
+          <label className="form-label" htmlFor="title">
             Title
           </label>
           <input
             className="form-control"
             type="text"
-            id="blog-title"
-            name="blog-title"
-            defaultValue={formData.blog_title}
+            id="title"
+            name="title"
+            defaultValue={formData.title}
             onChange={handleChange}
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label" htmlFor="blog-content">
+          <label className="form-label" htmlFor="content">
             Post
           </label>
           <textarea
             className="form-control"
             type="text"
-            id="blog-content"
-            name="blog-content"
-            defaultValue={formData.blog_content}
+            id="content"
+            name="content"
+            defaultValue={formData.content}
             onChange={handleChange}
             rows="3"
           ></textarea>
