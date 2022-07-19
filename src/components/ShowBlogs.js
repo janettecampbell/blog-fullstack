@@ -1,5 +1,5 @@
 const ShowBlogs = (props) => {
-  const { blogs, setBlogs, user, handleDelete, handleUpdate } = props;
+  const { blogs, handleDelete, handleUpdate } = props;
 
   return (
     <div className="show-blogs">
