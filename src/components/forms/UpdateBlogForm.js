@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateBlogForm = (props) => {
-  const { viewUpdateForm, setShowUpdateForm, blogs, setBlogs } = props;
+  const { viewForm, setShowUpdateForm, blogs, setBlogs } = props;
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
@@ -42,12 +42,23 @@ const UpdateBlogForm = (props) => {
     setShowUpdateForm(false);
   };
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/blogs", {
+        headers: {
+          "x-auth-token": localStorage.getItem("userToken"),
+        },
+      })
+      .then((res) => setBlogs(res.data))
+      .catch((err) => console.error(err));
+  }, [blog]);
+
   return (
     <div className="update-blog-form-wrapper">
       {blog && (
         <div className="update-blog-form">
           <div className="close-btn">
-            <button className="btn btn-danger" onClick={viewUpdateForm}>
+            <button className="btn btn-danger" onClick={viewForm}>
               X
             </button>
           </div>

@@ -34,17 +34,17 @@ const ShowBlogs = (props) => {
           />
         ) : null}
       </div>
-      <div className="update-form-wrapper">
-        {showUpdateForm === true ? (
-          <UpdateBlogForm
-            viewForm={viewUpdateForm}
-            setBlogs={setBlogs}
-            blogs={blogs}
-            showUpdateForm={showUpdateForm}
-            setShowCreateForm={setShowUpdateForm}
-          />
-        ) : null}
-      </div>
+
+      {showUpdateForm === true ? (
+        <UpdateBlogForm
+          viewForm={viewUpdateForm}
+          setBlogs={setBlogs}
+          blogs={blogs}
+          showUpdateForm={showUpdateForm}
+          setShowCreateForm={setShowUpdateForm}
+        />
+      ) : null}
+
       <div className="blog-post-body">
         {blogs &&
           blogs.map((blog) => (
