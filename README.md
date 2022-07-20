@@ -3,6 +3,7 @@
 This is a simple blog app. Users can make, read, update, and delete posts.
 
 This is what was planned for the home page layout.
+
 ![Plan for page] (./src/components/img/home-page-wireframe.jpg)
 
 ## Technologies Used
