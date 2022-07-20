@@ -4,9 +4,15 @@ This is a simple blog app. Users can make, read, update, and delete posts.
 
 ## Technologies Used
 
-For the back-end API Node.js is used with Express. For back-end documentation Swagger was used.
+### Back-end
 
-For the front-end user interface React is used.
+- Node.js
+- Express
+- Swagger (for documentation)
+
+### Front-end
+
+- React
 
 ### Dependencies
 
