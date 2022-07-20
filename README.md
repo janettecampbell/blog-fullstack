@@ -1,18 +1,28 @@
-# Getting Started with Create React App
+# Full-stack Blog App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple blog app. Users can make, read, update, and delete posts.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+For the back-end API Node.js is used with Express. For back-end documentation Swagger was used.
 
-### `npm start`
+For the front-end user interface React is used.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Dependency         | Version |
+| ------------------ | ------- |
+| bcrypt             | 5.0.1   |
+| cors               | 2.8.5   |
+| dotenv             | 16.0.1  |
+| express            | 4.18.1  |
+| express-validator  | 6.14.1  |
+| helmet             | 5.1.0   |
+| jsonwebtoken       | 8.5.1   |
+| mongoose           | 6.3.8   |
+| morgan             | 1.10.0  |
+| swagger-jsdoc      | 6.2.1   |
+| swagger-ui-express | 4.4.0   |
 
 ### `npm test`
 

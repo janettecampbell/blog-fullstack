@@ -145,12 +145,14 @@ nav {
   float: left;
 }
 
+.giphy-title {
+  font-size: 1.25vw;
+}
+
 .show-blogs {
   margin: 0;
   padding: 2vh 3vw 0 1vw;
   width: 72vw;
-  box-shadow: 0 0px white, 0 6px white, -7px 0 34px -7px #888,
-    7px 0 32px -12px #888;
   height: 166vh;
 }
 
@@ -165,6 +167,8 @@ nav {
   background-color: #fff;
   margin-bottom: 2vh;
   padding: 1vh 1vw 1vh 1vw;
+  border-radius: 5px;
+  box-shadow: #888 0px 5px 15px;
 }
 
 .blog-post p {
@@ -178,6 +182,11 @@ nav {
 
 .page-content {
   margin: 5vh 3vw 0 3vw;
+}
+
+.update-blog-form-wrapper {
+  position: relative;
+  z-index: 2;
 }
 
 @media only screen and (min-width: 501px) and (max-width: 991px) {
@@ -223,5 +232,9 @@ nav {
 
   .page-content {
     margin-top: 12vh;
+  }
+
+  .giphy-bar {
+    display: none;
   }
 }

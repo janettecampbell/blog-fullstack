@@ -20,7 +20,7 @@ const ShowBlogs = (props) => {
       <div className="blog-form-wrapper">
         {showCreateForm === true ? null : (
           <button className="open btn btn-primary" onClick={viewCreateForm}>
-            Post Blog
+            Blog Post
           </button>
         )}
 
@@ -53,6 +53,13 @@ const ShowBlogs = (props) => {
                     X
                   </span>
 
+                  <span
+                    className="update btn btn-info"
+                    onClick={() => handleUpdate(blog)}
+                  >
+                    Update
+                  </span>
+
                   {showUpdateForm === true ? (
                     <UpdateBlogForm
                       viewForm={viewUpdateForm}
@@ -62,13 +69,6 @@ const ShowBlogs = (props) => {
                       setShowCreateForm={setShowUpdateForm}
                     />
                   ) : null}
-
-                  <span
-                    className="update btn btn-info"
-                    onClick={() => handleUpdate(blog)}
-                  >
-                    Update
-                  </span>
                 </>
               )}
             </div>

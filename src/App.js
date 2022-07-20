@@ -30,7 +30,7 @@ function App() {
           render={(routerProps) => <About {...routerProps} user={user} />}
         />
 
-        {/* <Route path="/update/:id" component={UpdateBlogForm} /> */}
+        <Route path="/update/:id" component={UpdateBlogForm} />
       </Switch>
     </div>
   );
