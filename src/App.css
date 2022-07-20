@@ -7,35 +7,57 @@ html {
   margin: 0;
 }
 
-.nav-bar {
-  float: right;
-  margin-right: 3vw;
+.body {
+  background-color: rgb(209, 230, 247);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.container,
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-  box-shadow: 0 3px 14px -2px #888;
-  height: 18vh;
+.nav-bar {
+  float: right;
+  margin-top: 6px;
+}
+
+.nav-img {
+  width: 21px;
 }
 
 nav {
-  padding: 0 0 1vw 15vw;
-  float: left;
   font-weight: 500;
 }
 
-.nav-user {
-  padding: 0 0 1vw 15vw;
-  float: right;
+.header-user {
+  margin-top: 13px;
+}
+
+.user-img {
+  width: 21px;
+  margin-right: 10px;
+}
+
+.header-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(147, 204, 251);
+  padding: 0 1vw 0 1vw;
+  justify-content: space-between;
+  box-shadow: 0 3px 14px -2px #888;
 }
 
 .site-name {
-  padding: 1vw 0 1vw 0;
+  margin-top: 11px;
+}
+
+.site-logo {
+  width: 159px;
+}
+
+.logo-img {
+  width: 48px;
+  float: left;
+  margin-right: 10px;
 }
 
 .page-header {
@@ -90,6 +112,12 @@ nav {
   margin: 10vh 2vw 0 0;
   padding: 2vw;
   background-color: aliceblue;
+  position: relative;
+  z-index: 1;
+}
+
+.open {
+  margin: 1vh 0 0 1vw;
 }
 
 .close-btn {
@@ -100,8 +128,56 @@ nav {
   vertical-align: baseline;
 }
 
+.giphy-bar {
+  padding: 3vh 2vw 0 1vw;
+  width: 23vw;
+  background-color: #fff;
+  box-shadow: 1px 0 22px -2px #888;
+}
+
+.giphy-item {
+  height: 100px;
+}
+
+.giphy-img {
+  width: 100px;
+  margin-right: 1vw;
+  float: left;
+}
+
 .show-blogs {
-  margin-top: 6vh;
+  margin: 0;
+  padding: 2vh 3vw 0 1vw;
+  width: 72vw;
+  box-shadow: 0 0px white, 0 6px white, -7px 0 34px -7px #888,
+    7px 0 32px -12px #888;
+  height: 166vh;
+}
+
+.blog-post-body {
+  margin: 2vh 0 0 1vw;
+  position: absolute;
+  width: 68vw;
+  z-index: 0;
+}
+
+.blog-post {
+  background-color: #fff;
+  margin-bottom: 2vh;
+  padding: 1vh 1vw 1vh 1vw;
+}
+
+.blog-post p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.update {
+  margin-left: 1vw;
+}
+
+.page-content {
+  margin: 5vh 3vw 0 3vw;
 }
 
 @media only screen and (min-width: 501px) and (max-width: 991px) {
@@ -143,16 +219,6 @@ nav {
   .blog-form {
     width: 81vw;
     margin-top: 12vh;
-  }
-
-  .container,
-  .container-fluid,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    height: 21vh;
   }
 
   .page-content {

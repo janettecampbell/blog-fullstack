@@ -26,6 +26,7 @@ const Landing = (props) => {
           alt="multicolored music notes"
         />
       </div>
+      <h1>Do Re Mi</h1>
 
       {/* renders login first */}
       {hasAccount === true ? (

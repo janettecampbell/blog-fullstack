@@ -1,9 +1,9 @@
-import NavBar from "../layout/NavBar";
+import HeaderBar from "../layout/HeaderBar";
 
 const About = (props) => {
   return (
     <>
-      <NavBar user={props.user} />
+      <HeaderBar user={props.user} />
       <div className="page-content">
         <h1>About Us</h1>
         <p>

@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import home from "../img/home.png";
+import about from "../img/info-button.png";
 
 const NavBar = (props) => {
   return (
@@ -7,21 +9,16 @@ const NavBar = (props) => {
         <ul className="nav">
           <li className="nav-item">
             <NavLink className="nav-link" to="/home">
-              {" "}
-              Home
+              <img className="nav-img" src={home} alt="home icon" />
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="/about">
-              {" "}
-              About
+              <img className="nav-img" src={about} alt="home icon" />
             </NavLink>
           </li>
         </ul>
       </nav>
-      <h5 className="nav-user">
-        Hello, {props.user && <span>{props.user.username}</span>}
-      </h5>
     </div>
   );
 };

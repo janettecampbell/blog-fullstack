@@ -1,9 +1,8 @@
-import NavBar from "../layout/NavBar";
+import HeaderBar from "../layout/HeaderBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import CreateBlogForm from "../forms/CreateBlogForm";
-import UpdateBlogForm from "../forms/UpdateBlogForm";
 import ShowBlogs from "../ShowBlogs";
+import GiphyBar from "../GiphyBar";
 import { useHistory } from "react-router-dom";
 
 const Home = (props) => {
@@ -35,9 +34,9 @@ const Home = (props) => {
 
   const viewUpdateForm = () => {
     if (showUpdateForm) {
-      setShowCreateForm(false);
+      setShowUpdateForm(false);
     } else {
-      setShowCreateForm(true);
+      setShowUpdateForm(true);
     }
   };
 
@@ -55,45 +54,40 @@ const Home = (props) => {
   };
 
   const handleUpdate = (blog) => {
-    history.push(`/update/${blog._id}`);
+    history.push(`/home/${blog._id}`);
   };
 
   if (user) {
     return (
       <>
-        <NavBar user={props.user} />
-        {/* show create form on click of post blog */}
-        {showCreateForm === true ? null : (
-          <button className="open btn btn-primary" onClick={viewCreateForm}>
-            Post Blog
-          </button>
-        )}
-
-        {showCreateForm === true ? (
-          <CreateBlogForm
-            viewForm={viewCreateForm}
-            setBlogs={setBlogs}
-            blogs={blogs}
-          />
-        ) : null}
-
+        <HeaderBar user={props.user} />
+        {/* <NavBar user={props.user} /> */}
         {/* show create form on click of post blog */}
 
-        {showUpdateForm === true ? (
-          <UpdateBlogForm
-            viewForm={viewUpdateForm}
-            setBlogs={setBlogs}
-            blogs={blogs}
-          />
-        ) : null}
+        <div className="body">
+          <GiphyBar />
 
-        <ShowBlogs
-          blogs={blogs}
-          setBlogs={setBlogs}
-          user={props.user}
-          handleDelete={handleDelete}
-          handleUpdate={handleUpdate}
-        />
+          <ShowBlogs
+            blogs={blogs}
+            setBlogs={setBlogs}
+            user={props.user}
+            handleDelete={handleDelete}
+            handleUpdate={handleUpdate}
+            showCreateForm={showCreateForm}
+            setShowCreateForm={setShowCreateForm}
+            showUpdateForm={showUpdateForm}
+            setShowUpdateForm={setShowUpdateForm}
+            viewCreateForm={viewCreateForm}
+            viewUpdateForm={viewUpdateForm}
+          />
+          {/* <UpdateBlogForm
+            blogs={blogs}
+            setBlogs={setBlogs}
+            handleUpdate={handleUpdate}
+            viewUpdateForm={viewUpdateForm}
+            setShowUpdateForm={setShowUpdateForm}
+          /> */}
+        </div>
       </>
     );
   } else {

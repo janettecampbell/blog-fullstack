@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 import axios from "axios";
 
 const CreateBlogForm = (props) => {
+  const { setShowCreateForm, viewForm } = props;
   const [formData, setFormData] = useState({
     title: "",
     content: "",
@@ -21,12 +23,13 @@ const CreateBlogForm = (props) => {
         },
       })
       .then((res) => props.setBlogs([...props.blogs, res.data]));
+    setShowCreateForm(false);
   };
 
   return (
     <div className="blog-form">
       <div className="close-btn">
-        <button className="btn btn-danger" onClick={props.viewForm}>
+        <button className="btn btn-danger" onClick={viewForm}>
           X
         </button>
       </div>

@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import HeaderBar from "./components/layout/HeaderBar";
 import Landing from "./components/pages/Landing";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
@@ -11,9 +10,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <div className="container-fluid">
-      <HeaderBar />
-
+    <div className="App">
       <Switch>
         <Route
           exact
@@ -33,7 +30,7 @@ function App() {
           render={(routerProps) => <About {...routerProps} user={user} />}
         />
 
-        <Route path="/update/:id" component={UpdateBlogForm} />
+        {/* <Route path="/update/:id" component={UpdateBlogForm} /> */}
       </Switch>
     </div>
   );

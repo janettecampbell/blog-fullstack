@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateBlogForm = (props) => {
+  const { viewUpdateForm, setShowUpdateForm, blogs, setBlogs } = props;
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
@@ -28,18 +29,26 @@ const UpdateBlogForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/blogs/${id}`, blog, {
+      .put(`http://localhost:5000/blogs/${id}`, blog, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
+      .then((res) => setBlogs([...blogs, res.data]))
       .then((res) => history.push("/home"));
+    setShowUpdateForm(false);
   };
 
   return (
-    <div>
+    <div className="update-blog-form-wrapper">
       {blog && (
-        <div className="blog-form">
+        <div className="update-blog-form">
+          <div className="close-btn">
+            <button className="btn btn-danger" onClick={viewUpdateForm}>
+              X
+            </button>
+          </div>
+
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label" htmlFor="title">
