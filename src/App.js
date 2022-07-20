@@ -4,7 +4,6 @@ import { Route, Switch } from "react-router-dom";
 import Landing from "./components/pages/Landing";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import UpdateBlogForm from "./components/forms/UpdateBlogForm";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,7 +20,13 @@ function App() {
         />
 
         <Route
+          exact
           path="/home"
+          render={(routerProps) => <Home {...routerProps} user={user} />}
+        />
+
+        <Route
+          path="/home/:id"
           render={(routerProps) => <Home {...routerProps} user={user} />}
         />
 
@@ -29,8 +34,6 @@ function App() {
           path="/about"
           render={(routerProps) => <About {...routerProps} user={user} />}
         />
-
-        <Route path="/update/:id" component={UpdateBlogForm} />
       </Switch>
     </div>
   );

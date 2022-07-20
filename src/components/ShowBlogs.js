@@ -34,12 +34,23 @@ const ShowBlogs = (props) => {
           />
         ) : null}
       </div>
+      <div className="update-form-wrapper">
+        {showUpdateForm === true ? (
+          <UpdateBlogForm
+            viewForm={viewUpdateForm}
+            setBlogs={setBlogs}
+            blogs={blogs}
+            showCreateForm={showUpdateForm}
+            setShowCreateForm={setShowUpdateForm}
+          />
+        ) : null}
+      </div>
       <div className="blog-post-body">
         {blogs &&
           blogs.map((blog) => (
             <div className="blog-post" key={blog._id}>
               <h3>{blog.title}</h3>
-              <h6>Author: {blog.created_by}</h6>
+              {/* <h6>Author: {blog.created_by}</h6> */}
               <h6>
                 Published: {new Date(blog.created_at).toLocaleString("en-US")}
               </h6>
@@ -59,16 +70,6 @@ const ShowBlogs = (props) => {
                   >
                     Update
                   </span>
-
-                  {showUpdateForm === true ? (
-                    <UpdateBlogForm
-                      viewForm={viewUpdateForm}
-                      setBlogs={setBlogs}
-                      blogs={blogs}
-                      showCreateForm={showUpdateForm}
-                      setShowCreateForm={setShowUpdateForm}
-                    />
-                  ) : null}
                 </>
               )}
             </div>

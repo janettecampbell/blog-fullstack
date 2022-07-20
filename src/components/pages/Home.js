@@ -55,12 +55,13 @@ const Home = (props) => {
 
   const handleUpdate = (blog) => {
     history.push(`/home/${blog._id}`);
+    setShowUpdateForm(true);
   };
 
   if (user) {
     return (
       <>
-        <HeaderBar user={props.user} />
+        <HeaderBar user={user} />
         {/* <NavBar user={props.user} /> */}
         {/* show create form on click of post blog */}
 
@@ -70,7 +71,7 @@ const Home = (props) => {
           <ShowBlogs
             blogs={blogs}
             setBlogs={setBlogs}
-            user={props.user}
+            user={user}
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
             showCreateForm={showCreateForm}
@@ -80,13 +81,6 @@ const Home = (props) => {
             viewCreateForm={viewCreateForm}
             viewUpdateForm={viewUpdateForm}
           />
-          {/* <UpdateBlogForm
-            blogs={blogs}
-            setBlogs={setBlogs}
-            handleUpdate={handleUpdate}
-            viewUpdateForm={viewUpdateForm}
-            setShowUpdateForm={setShowUpdateForm}
-          /> */}
         </div>
       </>
     );

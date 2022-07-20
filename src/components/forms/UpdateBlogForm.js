@@ -7,6 +7,7 @@ const UpdateBlogForm = (props) => {
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
+  console.log(id);
 
   useEffect(() => {
     axios
@@ -20,7 +21,7 @@ const UpdateBlogForm = (props) => {
         setBlog(res.data);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [id]);
 
   const handleChange = (e) => {
     setBlog({ ...blog, [e.target.id]: e.target.value });
@@ -28,6 +29,7 @@ const UpdateBlogForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     axios
       .put(`http://localhost:5000/blogs/${id}`, blog, {
         headers: {
@@ -36,6 +38,7 @@ const UpdateBlogForm = (props) => {
       })
       .then((res) => setBlogs([...blogs, res.data]))
       .then((res) => history.push("/home"));
+
     setShowUpdateForm(false);
   };
 
