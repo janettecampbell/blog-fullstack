@@ -181,12 +181,24 @@ nav {
   margin-left: 1vw;
 }
 
+.update-blog-form {
+  float: left;
+  width: 40vw;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  border-radius: 25px;
+  margin: 10vh 2vw 0 0;
+  padding: 2vw;
+  background-color: aliceblue;
+  position: relative;
+  z-index: 1;
+}
+
 .page-content {
   margin: 5vh 3vw 0 3vw;
 }
 
 .update-blog-form-wrapper {
-  position: relative;
+  position: sticky;
   z-index: 2;
 }
 

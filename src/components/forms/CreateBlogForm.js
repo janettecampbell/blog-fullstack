@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const CreateBlogForm = (props) => {
-  const { setShowCreateForm, viewForm } = props;
+  const { blogs, setBlogs, setShowCreateForm, viewForm } = props;
   const [formData, setFormData] = useState({
     title: "",
     content: "",
@@ -22,7 +22,7 @@ const CreateBlogForm = (props) => {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
-      .then((res) => props.setBlogs([...props.blogs, res.data]));
+      .then((res) => setBlogs([...blogs, res.data]));
     setShowCreateForm(false);
   };
 

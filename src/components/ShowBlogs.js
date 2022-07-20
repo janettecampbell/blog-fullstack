@@ -40,7 +40,7 @@ const ShowBlogs = (props) => {
             viewForm={viewUpdateForm}
             setBlogs={setBlogs}
             blogs={blogs}
-            showCreateForm={showUpdateForm}
+            showUpdateForm={showUpdateForm}
             setShowCreateForm={setShowUpdateForm}
           />
         ) : null}
