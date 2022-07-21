@@ -1,10 +1,10 @@
 import CreateBlogForm from "./forms/CreateBlogForm";
 import UpdateBlogForm from "./forms/UpdateBlogForm";
-import deleteIcon from "./img/delete.png";
-import editIcon from "./img/edit.png";
+import BlogPosts from "./BlogPosts";
 
 const ShowBlogs = (props) => {
   const {
+    user,
     blogs,
     handleDelete,
     handleUpdate,
@@ -47,12 +47,19 @@ const ShowBlogs = (props) => {
         />
       ) : null}
 
-      <div className="blog-post-body">
+      <BlogPosts
+        user={user}
+        blogs={blogs}
+        handleDelete={handleDelete}
+        handleUpdate={handleUpdate}
+      />
+
+      {/* <div className="blog-post-body">
         {blogs &&
           blogs.map((blog) => (
             <div className="blog-post" key={blog._id}>
               <h3>{blog.title}</h3>
-              {/* <h6>Author: {blog.created_by}</h6> */}
+              <h6>Author: {blog.created_by}</h6>
               <h6>
                 Published: {new Date(blog.created_at).toLocaleString("en-US")}
               </h6>
@@ -81,7 +88,7 @@ const ShowBlogs = (props) => {
               )}
             </div>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 };
