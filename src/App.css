@@ -189,7 +189,7 @@ nav {
   margin: 10vh 2vw 0 0;
   padding: 2vw;
   background-color: aliceblue;
-  position: relative;
+  position: fixed;
   z-index: 1;
 }
 
