@@ -1,5 +1,7 @@
 import CreateBlogForm from "./forms/CreateBlogForm";
 import UpdateBlogForm from "./forms/UpdateBlogForm";
+import deleteIcon from "./img/delete.png";
+import editIcon from "./img/edit.png";
 
 const ShowBlogs = (props) => {
   const {
@@ -20,7 +22,7 @@ const ShowBlogs = (props) => {
       <div className="blog-form-wrapper">
         {showCreateForm === true ? null : (
           <button className="open btn btn-primary" onClick={viewCreateForm}>
-            Blog Post
+            New Post
           </button>
         )}
 
@@ -41,7 +43,7 @@ const ShowBlogs = (props) => {
           setBlogs={setBlogs}
           blogs={blogs}
           showUpdateForm={showUpdateForm}
-          setShowCreateForm={setShowUpdateForm}
+          setShowUpdateForm={setShowUpdateForm}
         />
       ) : null}
 
@@ -57,18 +59,23 @@ const ShowBlogs = (props) => {
               <p>{blog.content}</p>
               {blog.user === props.user._id && (
                 <>
-                  <span
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(blog)}
-                  >
-                    X
+                  <span onClick={() => handleDelete(blog)}>
+                    <img
+                      className="form-icon"
+                      src={deleteIcon}
+                      alt="delete button"
+                    />
                   </span>
 
                   <span
-                    className="update btn btn-info"
+                    className="update-icon"
                     onClick={() => handleUpdate(blog)}
                   >
-                    Update
+                    <img
+                      className="form-icon"
+                      src={editIcon}
+                      alt="edit-button"
+                    />{" "}
                   </span>
                 </>
               )}

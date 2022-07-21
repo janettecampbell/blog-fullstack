@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateBlogForm = (props) => {
-  const { viewForm, setShowUpdateForm, blogs, setBlogs } = props;
+  const { viewForm, setShowUpdateForm, setBlogs } = props;
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
@@ -11,7 +11,7 @@ const UpdateBlogForm = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/blogs/${id}`, {
+      .get(`https://jan-blog-app.herokuapp.com/blogs/${id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
@@ -31,27 +31,28 @@ const UpdateBlogForm = (props) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:5000/blogs/${id}`, blog, {
+      .put(`https://jan-blog-app.herokuapp.com/blogs/${id}`, blog, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
       .then((res) => setBlog([...blog, res.data]))
-      .then((res) => history.push("/home"));
+      .then((res) => history.push("/home"))
+      .catch((err) => console.error(console.error(err)));
 
     setShowUpdateForm(false);
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blogs", {
+      .get("https://jan-blog-app.herokuapp.com/blogs", {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
       .then((res) => setBlogs(res.data))
       .catch((err) => console.error(err));
-  }, [id]);
+  }, []);
 
   return (
     <div className="update-blog-form-wrapper">

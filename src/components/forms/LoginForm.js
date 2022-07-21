@@ -17,15 +17,17 @@ const LoginForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:5000/auth", formData).then((res) => {
-      if (res.data.token && res.data.user) {
-        localStorage.setItem("userToken", res.data.token);
-        props.setUser(res.data.user);
-        history.push("/home");
-      } else {
-        console.error(res.data);
-      }
-    });
+    axios
+      .post("https://jan-blog-app.herokuapp.com/auth", formData)
+      .then((res) => {
+        if (res.data.token && res.data.user) {
+          localStorage.setItem("userToken", res.data.token);
+          props.setUser(res.data.user);
+          history.push("/home");
+        } else {
+          console.error(res.data);
+        }
+      });
   };
 
   return (

@@ -202,6 +202,18 @@ nav {
   z-index: 2;
 }
 
+.form-icon {
+  width: 21px;
+}
+
+.delete-btn {
+  border: none;
+}
+
+.update-icon {
+  margin-left: 20px;
+}
+
 @media only screen and (min-width: 501px) and (max-width: 991px) {
   .landing-page {
     margin: 0 auto;

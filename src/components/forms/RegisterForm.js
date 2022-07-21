@@ -21,17 +21,19 @@ const RegisterForm = (props) => {
     e.preventDefault();
     console.log(formData);
 
-    axios.post("http://localhost:5000/users", formData).then((res) => {
-      console.log(res.data);
+    axios
+      .post("https://jan-blog-app.herokuapp.com/users", formData)
+      .then((res) => {
+        console.log(res.data);
 
-      if (res.data.token && res.data.user) {
-        localStorage.setItem("userToken", res.data.token);
-        props.setUser(res.data.user);
-        history.push("/home");
-      } else {
-        console.error(res.data);
-      }
-    });
+        if (res.data.token && res.data.user) {
+          localStorage.setItem("userToken", res.data.token);
+          props.setUser(res.data.user);
+          history.push("/home");
+        } else {
+          console.error(res.data);
+        }
+      });
   };
 
   return (
