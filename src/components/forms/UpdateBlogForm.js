@@ -36,7 +36,7 @@ const UpdateBlogForm = (props) => {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
-      .then((res) => setBlogs([...blogs, res.data]))
+      .then((res) => setBlog([...blog, res.data]))
       .then((res) => history.push("/home"));
 
     setShowUpdateForm(false);
@@ -51,7 +51,7 @@ const UpdateBlogForm = (props) => {
       })
       .then((res) => setBlogs(res.data))
       .catch((err) => console.error(err));
-  }, [blog]);
+  }, [id]);
 
   return (
     <div className="update-blog-form-wrapper">

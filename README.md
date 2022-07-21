@@ -56,7 +56,7 @@ I started by trying to break the project into smaller pieces.
 
 - Changed from the original plan to have one update button to have an update button on each post
 - Create a menu button that houses the delete and update buttons
-- Get the Update form to work on the same page as the blog post
+- Get the Update form to work
 - Private blog page that only shows the users blogs
 
 ## Link to Hosted Site
