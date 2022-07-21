@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateBlogForm = (props) => {
-  const { viewForm, setShowUpdateForm, blogs, setBlogs } = props;
+  const { viewForm, setShowUpdateForm } = props;
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
