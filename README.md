@@ -61,7 +61,7 @@ I started by trying to break the project into smaller pieces.
 
 ## Link to Hosted Site
 
-https://62d9717d94719a09a7b41da6--blog-fullstack.netlify.app/
+https://blog-fullstack.netlify.app/
 
 ## Installation Instructions
 
