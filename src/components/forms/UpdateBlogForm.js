@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateBlogForm = (props) => {
-  const { viewForm, setShowUpdateForm } = props;
+  const { viewForm, setShowUpdateForm, setBlogs } = props;
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
@@ -36,22 +36,12 @@ const UpdateBlogForm = (props) => {
         },
       })
       .then((res) => setBlog([...blog, res.data]))
+      .then((res) => setBlogs([blog, res.data]))
       .then((res) => history.push("/home"))
       .catch((err) => console.error(console.error(err)));
 
     setShowUpdateForm(false);
   };
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://jan-blog-app.herokuapp.com/blogs", {
-  //       headers: {
-  //         "x-auth-token": localStorage.getItem("userToken"),
-  //       },
-  //     })
-  //     .then((res) => setBlogs(res.data))
-  //     .catch((err) => console.error(err));
-  // }, [id]);
 
   return (
     <div className="update-blog-form-wrapper">
