@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateBlogForm = (props) => {
-  const { viewForm, setShowUpdateForm, setBlogs } = props;
+  const { viewForm, setShowUpdateForm, blogs, setBlogs } = props;
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const history = useHistory();
@@ -16,7 +16,6 @@ const UpdateBlogForm = (props) => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setBlog(res.data);
       })
       .catch((err) => console.error(err));
@@ -35,8 +34,7 @@ const UpdateBlogForm = (props) => {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
-      .then((res) => setBlog([...blog, res.data]))
-      .then((res) => setBlogs([blog, res.data]))
+      .then((res) => setBlogs([...blogs.splice(0, blogs.length - 1), res.data]))
       .then((res) => history.push("/home"))
       .catch((err) => console.error(console.error(err)));
 

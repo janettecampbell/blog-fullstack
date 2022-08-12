@@ -7,7 +7,7 @@ const BlogPosts = (props) => {
   return (
     <div className="blog-post-body">
       {blogs &&
-        blogs.map((blog) => (
+        [...blogs].reverse().map((blog) => (
           <div className="blog-post" key={blog._id}>
             <h3>{blog.title}</h3>
             <h6>Author: {blog.created_by}</h6>

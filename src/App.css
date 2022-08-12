@@ -129,8 +129,9 @@ nav {
 }
 
 .giphy-bar {
-  padding: 3vh 2vw 0 1vw;
+  padding: 3vh 2vw 3vh 1vw;
   width: 23vw;
+  height: 100vh;
   background-color: #fff;
   box-shadow: 1px 0 22px -2px #888;
 }
