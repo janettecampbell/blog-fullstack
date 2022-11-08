@@ -10,7 +10,7 @@ const UpdateBlogForm = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://jan-blog-app.herokuapp.com/blogs/${id}`, {
+      .get(`https://jan-blog-api.onrender.com/blogs/${id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
@@ -29,7 +29,7 @@ const UpdateBlogForm = (props) => {
     e.preventDefault();
 
     axios
-      .put(`https://jan-blog-app.herokuapp.com/blogs/${id}`, blog, {
+      .put(`https://jan-blog-api.onrender.com/blogs/${id}`, blog, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },

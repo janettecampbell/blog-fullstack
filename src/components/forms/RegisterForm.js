@@ -22,7 +22,7 @@ const RegisterForm = (props) => {
     console.log(formData);
 
     axios
-      .post("https://jan-blog-app.herokuapp.com/users", formData)
+      .post("https://jan-blog-api.onrender.com/users", formData)
       .then((res) => {
         console.log(res.data);
 

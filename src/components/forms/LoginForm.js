@@ -18,7 +18,7 @@ const LoginForm = (props) => {
     e.preventDefault();
 
     axios
-      .post("https://jan-blog-app.herokuapp.com/auth", formData)
+      .post("https://jan-blog-api.onrender.com/auth", formData)
       .then((res) => {
         if (res.data.token && res.data.user) {
           localStorage.setItem("userToken", res.data.token);

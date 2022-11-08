@@ -17,7 +17,7 @@ const CreateBlogForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://jan-blog-app.herokuapp.com/blogs", formData, {
+      .post("https://jan-blog-api.onrender.com/blogs", formData, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
