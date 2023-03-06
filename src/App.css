@@ -168,14 +168,9 @@ nav {
 .blog-post {
   background-color: #fff;
   margin-bottom: 2vh;
-  padding: 1vh 1vw 1vh 1vw;
+  padding: 15px 20px;
   border-radius: 5px;
   box-shadow: #888 0px 5px 15px;
-}
-
-.blog-post p {
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 .update {

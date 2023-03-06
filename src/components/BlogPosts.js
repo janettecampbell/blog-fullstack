@@ -14,7 +14,10 @@ const BlogPosts = (props) => {
             <h6>
               Published: {new Date(blog.created_at).toLocaleString("en-US")}
             </h6>
-            <p>{blog.content}</p>
+            {blog.content.split("\n").map((paragraph) => {
+              return <p>{paragraph}</p>;
+            })}
+            {/* <p>{blog.content}</p> */}
             {blog.user === user._id && (
               <>
                 <span onClick={() => handleDelete(blog)}>

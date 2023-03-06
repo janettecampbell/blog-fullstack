@@ -26,8 +26,12 @@ const Landing = (props) => {
           alt="multicolored music notes"
         />
       </div>
-      <h1>Do Re Mi</h1>
-
+      <header class="landing-header">
+        <h1>Do Re Mi</h1>
+        <p className="landing-text">
+          *Takes 30 seconds for server to wake up.*
+        </p>
+      </header>
       {/* renders login first */}
       {hasAccount === true ? (
         <div className="landing-form">
